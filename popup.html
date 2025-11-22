@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { 
+        font-family: sans-serif; 
+        padding: 10px; 
+        width: 250px;   /* make popup wider */
+        height: 250px;  /* taller popup */
+        box-sizing: border-box;
+      }
+
+      #scanCookies {
+        padding: 5px 10px;
+      }
+
+      table { 
+        border-collapse: collapse; 
+        width: 100%; 
+        margin-top: 10px; 
+      }
+
+      th, td { 
+        border: 1px solid #ccc; 
+        padding: 5px; 
+        text-align: left; 
+        font-size: 12px; 
+      }
+
+      th { background: #f0f0f0; }
+
+      /* Scrollable table body */
+      #cookieTable tbody {
+        display: block;
+        max-height: 350px;       /* limit height */
+        overflow-y: auto;        /* vertical scroll */
+      }
+
+      #cookieTable thead, 
+      #cookieTable tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;     /* keep columns aligned */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Cookielicious</h2>
+    <button id="scanCookies">Scan Cookies</button>
+    <p id="result"></p>
+
+    <table id="cookieTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Secure</th>
+          <th>HttpOnly</th>
+          <th>SameSite</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
